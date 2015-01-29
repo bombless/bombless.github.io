@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML>
+<!-- saved from url=(0085)https://raw.githubusercontent.com/JeffreyZhao/benchmark/master/wind-jit-aot/test.html -->
+<!DOCTYPE html PUBLIC "" ""><HTML><HEAD><META content="IE=11.0000" 
+http-equiv="X-UA-Compatible">
+
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META name="GENERATOR" content="MSHTML 11.00.9600.17496"></HEAD>
+<BODY>
+<PRE>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Test&lt;/title&gt;
+    &lt;script src="wind-all-0.7.0.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        function require() {
+            return Wind;
+        }
+        
+        var logDiv;
+        
+        window.onload = function () {
+            logDiv = document.getElementById("log");
+        }
+        
+        console.log = function (text) {
+            logDiv.innerHTML += (text + "&lt;br /&gt;");
+        }
+    
+        function load(path) {
+            var script = document.createElement("script");
+            script.src = path;
+            document.getElementsByTagName('head')[0].appendChild(script);
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    Click and checkout the output:
+    &lt;input type="button" value="JIT" onclick="load('jit.js')" /&gt;
+    &lt;input type="button" value="AOT" onclick="load('aot.js')" /&gt;
+    &lt;div id="log"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</PRE></BODY></HTML>
